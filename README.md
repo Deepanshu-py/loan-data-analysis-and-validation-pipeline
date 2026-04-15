@@ -95,7 +95,7 @@ Raw CSV → Python ETL → Clean CSV → SQL Server → Aggregation → Power BI
 
 ### Critical Fix (Defaulter Issue)
 
-```sql
+sql
 SUM(CASE 
     WHEN TRY_CAST(Defaulter AS FLOAT) = 1 THEN 1 
     ELSE 0 
@@ -146,12 +146,39 @@ END)
 
 ## KPIs (DAX)
 
-```DAX
+DAX
 Total Borrowers = COUNTROWS('LoanData')
 
 Total Defaulters = SUM('LoanData'[Defaulter])
 
 Default Rate = DIVIDE([Total Defaulters], [Total Borrowers], 0)
+
+## Power BI Dashboard
+
+### Live Dashboard
+
+View the interactive dashboard here:  
+https://app.powerbi.com/links/ifLzSJLWYw?ctid=1490b17d-5dc9-4cbf-aeba-a2e854f521b8&pbi_source=linkShare&bookmarkGuid=33add371-e044-42ec-859b-db8020795af0
+
+
+---
+
+### Dashboard Preview
+
+#### Loan Overview & Borrower Insights
+<img width="1670" height="941" alt="Screenshot 2026-04-15 144449" src="https://github.com/user-attachments/assets/bf253ed6-37bd-4642-98ac-db09d6b5ac3e" />
+
+
+#### Borrower Risk & Financial Behaviour Analysis
+<img width="1672" height="937" alt="Screenshot 2026-04-15 144417" src="https://github.com/user-attachments/assets/3c88544d-3226-47cd-b45a-92bcdb45aa05" />
+
+
+#### Default Risk & Borrower Segmentation
+<img width="1670" height="938" alt="Screenshot 2026-04-15 144515" src="https://github.com/user-attachments/assets/70d29e14-0e53-40d2-bc15-097008306915" />
+
+
+
+---
 
 ## Key Insights
 
